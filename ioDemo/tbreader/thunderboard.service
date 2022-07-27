@@ -1,0 +1,16 @@
+[Unit]
+Description=thunderboard
+After=multi-user.target
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/usr/local/bin/thunderboard/tb3.py
+WorkingDirectory=/usr/local/bin/thunderboard
+Restart=always
+RestartSec=5s
+WatchdogSec=60s
+
+
+[Install]
+WantedBy=multi-user.target
